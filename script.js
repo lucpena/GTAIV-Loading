@@ -83,14 +83,34 @@ function showSlides()
     /*********************************************
     *   Variáveis
     **********************************************/
-
+    let frontLoaded = false
+    let backgroundLoaded = false
 
     /*********************************************
     *   Código
     **********************************************/
-    // A tela preta para troca de cena
-    blackImg.classList.remove("active")    
-    blackImg.classList.add("hidden")   
+    // Espera as imagens carregarem para poder mostrá-las
+    backgroundImg.onload = function() { 
+        console.log("Background loaded.");
+        backgroundLoaded = true 
+
+        if( backgroundLoaded && frontLoaded ) {
+            blackImg.classList.remove("active")    
+            blackImg.classList.add("hidden")   
+        }
+
+    }
+
+    frontImg.onload = function() { 
+        console.log("Character loaded.")
+        frontLoaded = true
+
+        if( backgroundLoaded && frontLoaded ) {
+            blackImg.classList.remove("active")    
+            blackImg.classList.add("hidden")   
+        }
+    }
+
 
     // Posição X aleatória para o personagem
     const rndNumber = Math.random()
