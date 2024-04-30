@@ -96,7 +96,8 @@ function showSlides()
 
         if( backgroundLoaded && frontLoaded ) {
             blackImg.classList.remove("active")    
-            blackImg.classList.add("hidden")   
+            blackImg.classList.add("hidden")
+            startScene()
         }
 
     }
@@ -108,9 +109,9 @@ function showSlides()
         if( backgroundLoaded && frontLoaded ) {
             blackImg.classList.remove("active")    
             blackImg.classList.add("hidden")   
+            startScene()
         }
     }
-
 
     // Posição X aleatória para o personagem
     const rndNumber = Math.random()
@@ -202,23 +203,24 @@ function showSlides()
     backgroundIndex++
     frontIndex++
 
-    setTimeout(() => {
-        blackImg.classList.add("active")    
-        blackImg.classList.remove("hidden")
-    }, 4500)
+    function startScene() {
+        setTimeout(() => {
+            blackImg.classList.add("active")    
+            blackImg.classList.remove("hidden")
+        }, 4500)
 
-    setTimeout(() => {
-        // Reiniciando os valores dos personagens
-        frontImg.style.transition = "none"   
-        frontImg.style.transform = "scale(1.0)"
+        setTimeout(() => {
+            // Reiniciando os valores dos personagens
+            frontImg.style.transition = "none"   
+            frontImg.style.transform = "scale(1.0)"
 
-        // Reiniciando os valores do fundo
-        backgroundImg.style.transition = "none"
-        backgroundImg.style.transform = "scale(1.1)"    
+            // Reiniciando os valores do fundo
+            backgroundImg.style.transition = "none"
+            backgroundImg.style.transform = "scale(1.1)"    
 
-        showSlides()
-    }, 6000) 
-
+            showSlides()
+        }, 6000) 
+    }
 }
 
 /*********************************************
