@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA IV Loading Simulator</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+
+    <div class="slideshow-container">
+        <div class="slide background">
+            <img alt="Background" id="background-img">
+        </div>
+        <div class="slide front">
+            <img alt="Front" id="front-img">
+        </div>
+        <div>
+            <div alt="Black Screen" id="black-img"></div>
+        </div>
+    </div>
+
+    <div class="music-controls">
+        <div class="music-controls-content">
+            <button id="change-button" class="button">Change game!</button>
+            <button id="play-button" class="button">Play music!</button>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.25">
+            <audio id="bgm-gta">
+                <source src="music/gta.mp3" type="audio/mpeg">
+                Your loser browser does not support music...
+            </audio>
+            <audio id="bgm-yakuza">
+                <source src="music/yakuza.mp3" type="audio/mpeg">
+                Your loser browser does not support music...
+            </audio>
+            <audio id="sfx" loop>
+                <source src="music/menu-sounds.mp3" type="audio/mpeg">
+                Your loser browser does not support music...
+            </audio>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script src="script.js"></script>
